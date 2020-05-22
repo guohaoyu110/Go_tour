@@ -25,6 +25,18 @@ func main() {
 	// 	fmt.Println(i, card)
 	// }
 	cards3.print()
+
+	cards4 := newDeck()
+	// this is a test of multiple return values
+	hand, remainingCards := deal(cards4, 5) // two values of type deck
+	hand.print()
+	remainingCards.print()
+
+	greeting := "Hi there"
+	fmt.Println([]byte(greeting))
+
+	cards5 := newDeck()
+	fmt.Println("cards5.toString(): ", cards5.toString())
 }
 
 // a separate function besides main
