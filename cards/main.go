@@ -17,6 +17,14 @@ func main() {
 
 	fmt.Println(newCard())
 
+	// cards3 := []string{"Ace of Diamonds", newCard()}
+	cards3 := deck{"Ace of Diamonds", newCard()}
+	cards3 = append(cards3, "six of spades") //append添加到后面
+	fmt.Println("cards3: ", cards3)
+	// for i, card := range cards3 { //这里一定要加range
+	// 	fmt.Println(i, card)
+	// }
+	cards3.print()
 }
 
 // a separate function besides main
