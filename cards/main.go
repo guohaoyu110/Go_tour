@@ -43,6 +43,12 @@ func main() {
 	cards6 := newDeckFromFile("my_cards.txt")
 	cards6.print() // from file to deck
 
+	fmt.Println("/////////////////////// ")
+
+	cards7 := newDeck()
+	cards7.shuffle()
+	cards7.print()
+
 }
 
 // a separate function besides main

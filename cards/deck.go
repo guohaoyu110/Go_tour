@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // crate a new type of deck
@@ -76,3 +78,18 @@ func newDeckFromFile(filename string) deck {
 	return deck(s)
 
 }
+
+func (d deck) shuffle() {
+	// nothing else to return
+	// this is truly random
+	source := rand.NewSource(time.Now().UnixNano())
+	// get the source and create the new rand object
+	r := rand.New(source)
+	for i := range d { // do not add cards
+		newPositon := r.Intn(len(d) - 1) // the random generator, depends on the seed value
+		d[i], d[newPositon] = d[newPositon], d[i]
+
+	}
+}
+
+// know how to use the documentation
