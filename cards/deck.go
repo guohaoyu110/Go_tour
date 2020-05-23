@@ -42,10 +42,6 @@ func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
 }
 
-// func toByteSlice() {
-
-// }
-
 func (d deck) toString() string {
 	return strings.Join([]string(d), ",")
 	// []string(d) =
