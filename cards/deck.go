@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -45,6 +47,32 @@ func deal(d deck, handSize int) (deck, deck) {
 func (d deck) toString() string {
 	return strings.Join([]string(d), ",")
 	// []string(d) =
+	// have the ability to turn our deck to a string
 }
 
 // ["red", "yellow", "blue"]
+
+func (d deck) saveToFile(filename string) error {
+	// return type error
+	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
+	// use default permissions
+
+}
+
+func newDeckFromFile(filename string) deck {
+	// the return type is deck
+	bs, err := ioutil.ReadFile(filename)
+	if err != nil {
+		// comes to the very particular error
+		// option #1 - log the error and return a call to newDeck()
+		// option #2 - extremely wrong with our program, and entirely quit the program
+		fmt.Println(err)
+		os.Exit(1) // vscode automatically generate the package "os"
+
+	}
+	s := strings.Split(string(bs), ",")
+	// print out the value right now
+	// Ace of Spades, two of spades, three of spades
+	return deck(s)
+
+}

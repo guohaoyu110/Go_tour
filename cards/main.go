@@ -37,6 +37,12 @@ func main() {
 
 	cards5 := newDeck()
 	fmt.Println("cards5.toString(): ", cards5.toString())
+
+	cards5.saveToFile("my_cards.txt")
+
+	cards6 := newDeckFromFile("my_cards.txt")
+	cards6.print() // from file to deck
+
 }
 
 // a separate function besides main
