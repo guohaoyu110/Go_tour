@@ -59,3 +59,6 @@ func (p person) print() {
 }
 
 //如何实现指针呢？
+// when you pass an integer, float, string, or struct into a function, it creats a copy of each argument, and these copies are used inside of the function
+
+// a slice is a reference type, because a slice contains a reference to the actual underlying list of records
