@@ -26,6 +26,7 @@ func main() {
 	// what is this copy thing work?
 	// the implementation of io.Copy
 }
+
 func (logWriter) Write(bs []byte) (int, error) {
 	// implementation inside of write
 	fmt.Println(string(bs))
